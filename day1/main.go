@@ -64,8 +64,6 @@ func solvePart2(input []elf) int {
 
 
 func main() {
-    fmt.Println("hello world")
-
     input := common.ReadInput("input.txt")
     parsedInput := parseInput(input)
 
