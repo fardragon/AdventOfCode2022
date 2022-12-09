@@ -25,3 +25,21 @@ func check(err error) {
 		panic(err)
 	}
 }
+
+type Set[T comparable] map[T]struct{}
+func NewSet[T comparable]() Set[T] {
+    return make(Set[T])
+}
+
+func (s Set[T]) Add(elem T) {
+    s[elem] = struct{}{}
+}
+
+func (s Set[T]) Contains(elem T) bool {
+    _, ok := s[elem]
+    return ok
+}
+
+func (s Set[T]) Len() int {
+    return len(s)
+}
