@@ -43,3 +43,11 @@ func (s Set[T]) Contains(elem T) bool {
 func (s Set[T]) Len() int {
     return len(s)
 }
+
+func Abs(a int) int {
+    if a < 0 {
+        return -a
+    } else {
+        return a
+    }
+}

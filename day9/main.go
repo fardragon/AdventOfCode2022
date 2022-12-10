@@ -58,29 +58,23 @@ func parseInput(input []string) []instruction {
 }
 
 
-func abs(a int) int {
-    if a < 0 {
-        return -a
-    } else {
-        return a
-    }
-}
+
 func nodeChase(head point, tail point) point {
 
     distance := point{head.x - tail.x, head.y - tail.y}
 
-    if abs(distance.x) <= 1 && abs(distance.y) <= 1 {
+    if common.Abs(distance.x) <= 1 && common.Abs(distance.y) <= 1 {
         //head and tail are adjacent, tail doesn't move
         return tail
     }
 
     direction := point{0, 0}
     if distance.x != 0 {
-        direction.x = distance.x / abs(distance.x)
+        direction.x = distance.x / common.Abs(distance.x)
     }
 
     if distance.y != 0 {
-        direction.y = distance.y / abs(distance.y)
+        direction.y = distance.y / common.Abs(distance.y)
     }
 
     return point{tail.x + direction.x, tail.y + direction.y}
