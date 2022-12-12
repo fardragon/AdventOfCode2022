@@ -40,8 +40,16 @@ func (s Set[T]) Contains(elem T) bool {
     return ok
 }
 
+func (s Set[T]) Remove(elem T) {
+    delete(s, elem)
+}
+
 func (s Set[T]) Len() int {
     return len(s)
+}
+
+func (s Set[T]) Empty() bool {
+    return len(s) == 0
 }
 
 func Abs(a int) int {
