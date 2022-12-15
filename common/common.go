@@ -59,3 +59,11 @@ func Abs(a int) int {
         return a
     }
 }
+
+func Abs64(a int64) int64 {
+    if a < 0 {
+        return -a
+    } else {
+        return a
+    }
+}
